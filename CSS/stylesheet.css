@@ -1,0 +1,128 @@
+/* Root: global vars */
+
+:root {
+    /* Insert Global variables here */
+    --light-drab: rgb(120, 176, 22);
+    --dark-drab: rgb(64, 88, 24);
+    --dark-white: rgb(240, 240, 240);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Classes*/
+.header {
+    /* Add background-image: ; for background image */
+    /* background-repeat: norepeat */
+    /* background-position: maybe delete this */
+    background-color: var(--dark-drab);
+    background-image: linear-gradient(to right, var(--light-drab), var(--dark-drab));
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+.header nav {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+.header nav:hover {
+    opacity: 0.5;
+}
+
+.doc-name {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    text-align: center; 
+    color: var(--dark-white);
+}
+
+/*ID(s)*/
+#page-subject-img{
+    grid-row: 2/ 3;
+    grid-column: 2/ 3;
+    float: center;
+    width: 60%;
+}
+
+#box-id {
+    margin-left: 2rem;
+}
+
+#alab-p {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+#alab-p:hover {
+    opacity: 1;
+}
+
+
+/*General tags*/
+main {
+    display: grid;
+    background: lightblue;
+}
+h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: bold;
+
+    text-align: left;
+    color: var(--dark-drab)
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+
+    text-align: left;
+    color: rgb(155, 155, 155);
+    text-decoration: underline;
+}
+
+/* TODO: Include more media to account for different resolutions*/
+/*
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+    .header {
+        grid-template-rows: 80% 20%;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px){
+    .header {
+        grid-template-columns: 55% 45%;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+    .header {
+        grid-template-rows: 20% 80%;
+    }
+}
+
+
+@media (min-width: 40em) {
+    .header {
+        grid-template-columns: 55% 45%;
+    }
+}
+
+@media (min-width: 40em) {
+    .header {
+        grid-template-columns: 55% 45%;
+    }
+}
+*/
+@media (min-width: 40em) {
+    .header {
+        grid-template-columns: 55% 45%;
+    }
+}
