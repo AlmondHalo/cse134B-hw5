@@ -83,8 +83,6 @@
 #alab-p {
     opacity: 0;
     transition: opacity 200ms;
-
-    width: 2px;
 }
 
 #alab-p:hover {
