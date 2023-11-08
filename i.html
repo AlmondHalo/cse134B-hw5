@@ -3,50 +3,45 @@
     <head>
         <meta charset="utf-8">
 
+        <!--Add meta tag to include meta data for links (ARCLab)-->
+
         <link rel="stylesheet" href="./CSS/stylesheet.css"/>
         <title>Title Of Document</title>
     </head>
     <body>
-        <header class="header">
-            <div class="headelem">
-                <h1 class="doc-name">Cash Rice</h1>
-                <details class="doc-name">
-                    <summary>Contact Information</summary>
-                    <span>cmrice@ucsd.edu</span>
-                    <nav>
-                        <a href="">Clickable Link</a>
-                    </nav>
-                </details>
-                <fieldset class="doc-name" id="box-id">
-                    <legend>Introduction</legend>
-                    <p>This is <b>Placeholder</b> text</p>
-                    <p>
-                        Though not ideal for first impressions, it is nice to get 
-                        aquainted with you! I am currently a 
-                        3rd year at University of Califorina, San Diego 
-                        (UCSD for short), a Electrical Computer Engineer major (ECE).
-                        Outside of major related hobbies, I enjoy fantasy reading as 
-                        well as listening to and creating music.
-                    </p>
-                </fieldset>
-            </div>
-
-            <picture>
-                <img class="headelem" id="page-subject-img" src="./IMG/temp.jpg" alt="Image of Cash R.">
-            </picture>
-        </header>
         <main>
+            <h1>Cash Rice</h1>
+            <picture>
+                <source srcset="drrp.jpg">
+                <img src="drrp.jpg" alt="Image of Cash R.">
+            </picture>
+
+            <details>
+                <summary>Contact Information</summary>
+                <nav>
+                    <a href="">Clickable Link</a>
+                </nav>
+            </details>
+
             <hr/> 
+
+            <h2>Introduction</h2>
+            <fieldset>
+                <legend>Bio</legend>
+                <p>This is <b>Placeholder</b> text</p>
+            </fieldset>
+
+            <hr/>
             
             <h2>Resume</h2>
-            <h3 class="body-item-1">Tendon-Driven Catheter</h3>
-            <ul class="body-item-1">
+            <h3>ARCLab Research</h3>
+            <ul>
                 <li>Worked on <em>design</em> and <em>data collection</em> of Tendon Driven Catheter robot.</li>
                 <li>Participated in small team design sessions.</li>
             </ul>
-            <aside class="body-item-1">
-                <figure id="alab-p">
-                    <img src="IMG/20J_BB22.jpg" alt="Image of ARCLab">
+            <aside>
+                <figure>
+                    <img src="20J_BB22.jpg" alt="Image of ARCLab">
                     <figcaption>ARCLab</figcaption>
                 </figure>
                 <h4>ARCLab Description</h4>
@@ -55,16 +50,6 @@
                     The leading lab professor is Michael Yip.
                 </p>
             </aside>
-
-            <h3 class="body-item-2">Softbody Simulation</h3>
-            <ul class="body-item-2">
-                <li>Created 3D rigid body simulation environment within NVIDA's 
-                    Isaac Sim.
-                </li>
-                <li>Learned of the indudstry standard algorithm that serves as 
-                    the basis for running 3D softbody simulation.
-                </li>
-            </ul>
         </main>
 
         <section>
