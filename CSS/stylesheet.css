@@ -159,6 +159,12 @@ h3 {
         float: right;
         width: 60%;
     }
+    #drop-down {
+        font-size: 3rem;
+    }
+    #introduction {
+        font-size: 3rem;
+    }
 
     .resume {
         background-image: linear-gradient(to right, var(--light-drab), var(--dark-white));
@@ -193,6 +199,10 @@ h3 {
         width: 50%;
         margin-left: 12dvh;
         margin-right: 12dvh;
+    }
+    #survey-content {
+        margin-left: 2dvh;
+        font-size: 3rem;
     }
 
     .hobbies {
