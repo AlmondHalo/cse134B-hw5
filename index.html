@@ -31,12 +31,12 @@
                 </fieldset>
             </div>
 
-            <picture>
-                <img class="headelem" id="page-subject-img" src="./IMG/temp.jpg" alt="Image of Cash R.">
+            <picture class="headelem">
+                <img id="page-subject-img" src="./IMG/temp.jpg" alt="Image of Cash R.">
             </picture>
         </header>
+
         <main class="resume">
-            
             <h2 id="resume-title">Resume</h2>
             <div class="body-item-1">
                 <h3>Tendon-Driven Catheter</h3>
@@ -45,8 +45,8 @@
                     <li>Participated in small team design sessions.</li>
                 </ul>
                 <aside>
-                    <figure id="alab-p">
-                        <img src="IMG/ARCLab.jpg" alt="Image of ARCLab">
+                    <figure>
+                        <img src="IMG/ARCLab.jpg" alt="Image of ARCLab" id="arclab-img">
                         <figcaption>ARCLab</figcaption>
                     </figure>
                     <h4>ARCLab Description</h4>
@@ -67,19 +67,52 @@
                         the basis for running 3D softbody simulation.
                     </li>
                 </ul>
-                <figure id="alab-p">
+                <figure>
                     <img src="./IMG/SxPBD.gif" alt="GIF of Isaac Sim" style="width:48px;height:48px;">
                     GIF didn't load
                 </figure>
             </div>
+
+            <section class="body-item-3">
+                <h3>Survey</h3>
+                <form action="./Actions/action.php" method="get">
+                    <!--This is a quick form to showcase tags and their functions (consider removing)-->
+                    <label for="cname">Company Name:</label>
+                    <input type="text" id="cname" name="cname"><br/>
+                    <label for="cemail">Company Email</label>
+                    <input type="text" id="cemail" name="cemail"><br/>
+                    <input type="submit" value="submit"><br/>
+                    
+                    <label for="info">Request More Information</label>
+                    <select name="info" id="info">
+                        <optgroup label="Personal Info">
+                            <option value="skills">Skills</option>
+                            <option value="values">Work Values</option>
+                        </optgroup>
+                        <optgroup label="Work Experience">
+                            <option value="arclab">ARCLab Experiences</option>
+                            <option value="wics">Programming competition</option>
+                        </optgroup>
+                    </select>
+                    <input type="submit" value="submit"><br/>
+    
+                    <label for="method">Please select prefered contact method</label>
+                    <input list="methods" name="method" id="method">
+                    <datalist id="methods">
+                        <option value="Email">Email</option>
+                        <option value="Phone">Phone</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="other">other</option>
+                    </datalist>
+                    <input type="submit" value="submit">
+                </form>
+            </section>
         </main>
 
-        <hr />
-
         <section class="hobbies">
+            <h2 id="hobbies-title">Hobbies</h2>
             <div class="hobbies-item-1">
-                <h2>Hobbies</h2>
-                <video controls>
+                <video controls id="music-1">
                     <source src="Audio/Wubz.mp4" type="video/mp4">
                 </video>
             </div>
@@ -93,42 +126,7 @@
         </section>
 
         <section>
-            <h3>Survey</h3>
-            <form action="./Actions/action.php" method="get">
-                <!--This is a quick form to showcase tags and their functions (consider removing)-->
-                <label for="cname">Company Name:</label>
-                <input type="text" id="cname" name="cname"><br/>
-                <label for="cemail">Company Email</label>
-                <input type="text" id="cemail" name="cemail"><br/>
-                <input type="submit" value="submit"><br/>
-                
-                <label for="info">Request More Information</label>
-                <select name="info" id="info">
-                    <optgroup label="Personal Info">
-                        <option value="skills">Skills</option>
-                        <option value="values">Work Values</option>
-                    </optgroup>
-                    <optgroup label="Work Experience">
-                        <option value="arclab">ARCLab Experiences</option>
-                        <option value="wics">Programming competition</option>
-                    </optgroup>
-                </select>
-                <input type="submit" value="submit"><br/>
-
-                <label for="method">Please select prefered contact method</label>
-                <input list="methods" name="method" id="method">
-                <datalist id="methods">
-                    <option value="Email">Email</option>
-                    <option value="Phone">Phone</option>
-                    <option value="LinkedIn">LinkedIn</option>
-                    <option value="other">other</option>
-                </datalist>
-                <input type="submit" value="submit">
-            </form>
-        </section>
-
-        <section>
-            <h3>Experimental</h3>
+            <h2>Experimental</h2>
             <pre>
                 <strong>Note:</strong>    This section will only be used 
                 to test additional tags which 
