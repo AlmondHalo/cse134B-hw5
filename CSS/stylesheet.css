@@ -110,8 +110,7 @@
 
 /*General tags*/
 body {
-    background-image: linear-gradient(to right, red, var(--dark-white));
-
+    /* background-image: linear-gradient(to right, red, var(--dark-white)); */
 }
 
 h1 {
