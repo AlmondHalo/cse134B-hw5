@@ -11,14 +11,14 @@
             <div class="headelem">
                 <h1 class="doc-name">Cash Rice</h1>
                 <details class="doc-name">
-                    <summary>Contact Information</summary>
+                    <summary id="drop-down">Contact Information</summary>
                     <span>cmrice@ucsd.edu</span>
                     <nav>
                         <a href="">Clickable Link</a>
                     </nav>
                 </details>
                 <fieldset class="doc-name" id="box-id">
-                    <legend>Introduction</legend>
+                    <legend id="introduction">Introduction</legend>
                     <p>This is <b>Placeholder</b> text</p>
                     <p>
                         Though not ideal for first impressions, it is nice to get 
@@ -32,7 +32,7 @@
             </div>
 
             <picture class="headelem">
-                <img id="page-subject-img" src="./IMG/temp.jpg" alt="Image of Cash R.">
+                <img src="./IMG/temp.jpg" alt="Image of Cash R." id="page-subject-img">
             </picture>
         </header>
 
@@ -47,7 +47,7 @@
                 <aside>
                     <figure>
                         <img src="IMG/ARCLab.jpg" alt="Image of ARCLab" id="arclab-img">
-                        <figcaption>ARCLab</figcaption>
+                        <figcaption><cite><a href="https://www.ucsdarclab.com/">ARCLab</a></cite></figcaption>
                     </figure>
                     <h4>ARCLab Description</h4>
                     <p>
@@ -75,7 +75,7 @@
 
             <section class="body-item-3">
                 <h3>Survey</h3>
-                <form action="./Actions/action.php" method="get">
+                <form action="./Actions/action.php" method="get" id="survey-content">
                     <!--This is a quick form to showcase tags and their functions (consider removing)-->
                     <label for="cname">Company Name:</label>
                     <input type="text" id="cname" name="cname"><br/>
@@ -125,117 +125,39 @@
 
         </section>
 
-        <section>
-            <h3>Experimental</h3>
-            <pre>
-                <strong>Note:</strong>    This section will only be used 
-                to test additional tags which 
-                don't fit the 
-                format of 
-                a resume
-            </pre>
+        <section class="survey">
+            <h2>Survey</h2>
+            <form method="post" action="https://httpbin.org/post">
 
-            <ol>
-                <li>Test iframe tag<br/>
-                    <iframe src="https://652435206eb8a809523c7716--courageous-alpaca-3583cc.netlify.app/" title="HW1 Netlify Site">
-                    </iframe>
-                </li>
+                <label for="name">Name <span class="req">*</span>:</label>
+                <input type="text" id="name" name="name" required
+                    pattern="[A-za-z0-9\s]+"><br/>
+                <output></output>
+                <output></output>
 
-                <li>Test textarea tag<br/>
-                    <textarea id="textareatest" name="textareatest" rows="2" cols="60">Changes to this text won't be saved as I haven't linked it to a action</textarea>
-                </li>
+                <label for="email">Email <span class="req">*</span>:</label>
+                <input type="email" id="email" name="email" required><br/>
+                <output></output>
+                <output></output>
 
-                <li>Test button tag<br/>
-                    <button type="button" onclick="alert('button works')">Test Functionality</button>
-                </li>
+                <label for="comments">Comments <span class="req">*</span>:</label>
+                <input id="comments" name="comments" required
+                    minlength="3"
+                    maxlength="400"
+                    pattern="[A-Za-z0-9\s?!.,':;]+">
+                <output></output>
+                <output></output>
 
-                <li>Test template tag
-                    <template>
-                        <p>If this text appears, then template tag has failed</p>
-                    </template>
-                    <p><b>You should see no other text aside from this</b>, else template tag has failed</p>
-                </li>
+                <input type="hidden" value="true" name="possible_bot"><br/>
 
-                <li>Test table and all associated tags<br/>
-                    <table>
-                        <caption>First attempt at table</caption>
-                        <colgroup>
-                            <col span="3" style="">
-                        </colgroup>
-                        <tr>
-                            <th scope="col">Elements</th>
-                            <th scope="col">Col 1</th>
-                            <th scope="col">Col 2</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Elem 1</th>
-                            <td>data 1:1</td>
-                            <td>data 1:2</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Elem 2</th>
-                            <td>data 2:1</td>
-                            <td>data 2:2</td>
-                        </tr>
-                    </table>
-                </li>
+                <input type="submit" value="submit">
 
-                <li>Test div and span tags
-                    <div class="unusedDiv">
-                        <p>
-                            This is contained within a div element <br/>
-                            and this is part of a <span>span element</span>
-                        </p>
-                    </div>
-                </li>
-
-                <li>Test code tag<br/>
-                    <p>The <code>div</code> tag is overused</p>
-                </li>
-
-                <li>Test audio tag<br/>
-                    <audio>
-                        <source src="./Audio/tôi_không_nói.m4a" type="audio/m4a">
-
-                    </audio>
-                </li>
-
-                <li>Test video tag<br/>
-                    <video>
-                        <source src="Audio/Wubz.mp4" type="video/mp4">
-                    </video>
-                </li>
-
-                <li>Test svg tag<br/>
-                    <svg>
-                        <rect width="400" height="400"></rect>
-                    </svg>
-                </li>
-
-                <li>Test canvas tag<br/>
-                    <canvas id="canvas"></canvas>
-                </li>
-
-                <li>MathML Relativity Equation Example<br/>
-                    <math>
-                        <mrow>
-                            <mi>E</mi>
-                            <mo>=</mo>
-                            <msup>
-                                <mrow>
-                                    <mi>m</mi>
-                                    <mi>c</mi> 
-                                </mrow>
-                                <mn>2</mn>
-                            </msup>
-                        </mrow>
-                    </math>
-                </li>
-            </ol>
+                <output></output>
+            </form>
         </section>
-        
+
         <footer>
-            <h2>Links To Related Sites</h3>
+            <h2>Links To Related Sites</h2>
         </footer>
     </body>
 </html>
