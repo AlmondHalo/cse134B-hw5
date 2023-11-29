@@ -92,8 +92,8 @@ function evalSubmit() {
     if (nameElem.validity.valid && emailElem.validity.valid && commentElem.validity.valid) {
         // TODO: Submit the form to the server, empty form_errors
         let inputErrors = document.getElementById("form-errors");
-        let JSONFormErrors = JSON.parse(JSON.stringify(form_errors));
-        // let JSONFormErrors = JSON.stringify(form_errors);
+        // let JSONFormErrors = JSON.parse(JSON.stringify(form_errors));
+        let JSONFormErrors = JSON.stringify(form_errors);
         inputErrors.value = JSONFormErrors;
 
         formElem.appendChild(inputErrors);
