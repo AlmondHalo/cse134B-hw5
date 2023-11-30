@@ -1,17 +1,6 @@
 
 /**
- * TODOS:
- * 1 Delete all console log calls
- * 2 finish implementing form_errors
- * 3 Upload the json version of those form errors to the server
- * 4 Add in check for email (might have to cancel previous validation)
- * 5 Add clear array when validation succeeds
- * 
  * 6 Add flashing for comments
- * 
- * 7 Add error message (HTML and CSS fadeout)
- * 
- * 8 Add Change theme option
  */
 const nameElem = document.getElementById("name");
 const emailElem = document.getElementById("email");
@@ -68,6 +57,7 @@ runEventListeners();
 
 function evalName() {
     if (nameChars.test(nameElem.value)) {
+        initiateFlash(nameElem);
         updateErrorArray();
         nameElem.setCustomValidity("Name did not validate");
     } else {
@@ -93,6 +83,7 @@ function evalComments() {
         commentElem.setCustomValidity("Comments are too short");
     }
     else if (specialChars.test(commentElem.value)) {
+        initiateFlash(commentElem);
         updateErrorArray();
         commentElem.setCustomValidity("Comments cannot use special characters");
     } else {
@@ -101,7 +92,6 @@ function evalComments() {
 }
 
 function evalSubmit() { 
-
     if (nameElem.validity.valid && emailElem.validity.valid && commentElem.validity.valid) {
         let inputErrors = document.getElementById("form-errors");
         // let JSONFormErrors = JSON.parse(JSON.stringify(form_errors));
@@ -114,7 +104,7 @@ function evalSubmit() {
         formElem.appendChild(inputErrors);
         formElem.submit();
         clearArray();
-    }
+    } 
 }
 
 
@@ -129,6 +119,22 @@ function updateErrorArray() {
 function clearArray() {
     while (form_errors.length > 0) {
         form_errors.pop();
+    }
+}
+function initiateFlash(elem) {
+    let i = 0;
+    var setID = setInterval(function() {
+        flash(elem);
+        console.log(i);
+        (i == 5) ? clearInterval(setID) : i=i+1;
+    }, 150);
+}
+function flash(elem) {
+    var tempColor = elem.style.color;
+    if (tempColor === "red") {
+        elem.style.color = "black";
+    } else {
+        elem.style.color = "red";
     }
 }
 
