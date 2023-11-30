@@ -23,7 +23,16 @@ let form_errors = [];
 const specialChars = /[@#$%^&*_\-+=\[\]{}\\|<>\/~ ]+/;
 const nameChars = /[!@#$%^&*\(\)\{\}\[\]\<\>\/;':"-\=\_\+]+/;
 
-setTheme("dark");
+const themeSwitcher = document.getElementById("theme-switcher");
+themeSwitcher.style.visibility = "visible";
+
+localStorage.setItem("theme", localStorage.getItem("theme") === "dark" ? "light" : "dark");
+themeSwitcher.addEventListener('click', (eButton) => {
+    console.log("Gets to here");
+    setTheme(localStorage.getItem("theme"));
+});
+
+
 function runEventListeners() {
     nameElem.addEventListener('input', (eName) => {
         eName.preventDefault();
@@ -127,8 +136,16 @@ function clearArray() {
 
 function setTheme(theme) {
     const root = document.documentElement;
-    console.log(root);
-    if (theme == "dark") {
-        root.style.setProperty('background', 'var(--dark-dark-theme)'); 
+    console.log("Script gets here");
+    if (theme === "light") {
+        root.style.setProperty('--dark-drab', 'var(--dark-dark-theme)'); 
+        root.style.setProperty('--light-drab', 'var(--light-dark-theme)');
+        root.style.setProperty('--dark-white', 'var(--deep-red-theme)');
+        localStorage.setItem("theme", "dark");
+    } else {
+        root.style.setProperty('--dark-drab', 'var(--dark-drab-theme)'); 
+        root.style.setProperty('--light-drab', 'var(--light-drab-theme)');
+        root.style.setProperty('--dark-white', 'var(--dark-white-theme)');
+        localStorage.setItem("theme", "light");
     }
 }

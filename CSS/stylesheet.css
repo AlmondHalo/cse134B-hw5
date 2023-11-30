@@ -5,10 +5,16 @@
     --light-drab: rgb(120, 176, 22);
     --dark-drab: rgb(64, 88, 24);
     --dark-white: rgb(240, 240, 240);
+
+    --light-drab-theme: rgb(120, 176, 22);
+    --dark-drab-theme: rgb(64, 88, 24);
+    --dark-white-theme: rgb(240, 240, 240);
+
     --req-red: rgb(250, 200, 200);
 
     --dark-dark-theme: rgb(66, 66, 66);
     --light-dark-theme: rgb(111, 111, 111);
+    --deep-red-theme: rgb(111, 33, 33);
 }
 
 * {
