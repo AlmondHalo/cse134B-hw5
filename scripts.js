@@ -18,71 +18,75 @@ const emailElem = document.getElementById("email");
 const commentElem = document.getElementById("comments");
 const formElem = document.getElementById("contact-form");
 
-const form_errors = [];
+let form_errors = [];
 
 const specialChars = /[@#$%^&*_\-+=\[\]{}\\|<>\/~ ]+/;
 const nameChars = /[!@#$%^&*\(\)\{\}\[\]\<\>\/;':"-\=\_\+]+/;
 
+setTheme("dark");
 function runEventListeners() {
     nameElem.addEventListener('input', (eName) => {
         eName.preventDefault();
-        console.log("This Section is reached: 1");
         evalName();
     });
 
     emailElem.addEventListener('input', (eEmail) => {
         eEmail.preventDefault();
-        console.log("This Section is reached: 2");
+        evalEmail();
     });
 
     commentElem.addEventListener('input', (eComments) => {
         eComments.preventDefault();
-        console.log("This Section is reached: 3");
+        let commentText = document.getElementById("comments");
+        let commentInfo = document.getElementById("comments-info");
+        let len = commentText.value.length;
+        commentInfo.innerHTML = len + "/400";
+        if (len > 10 && len < 15) {
+            commentText.style.color = "orange";
+        }
+        else if (len >= 15) {
+            commentText.style.color = "red";
+        }
         evalComments();
     }); 
 
     formElem.addEventListener('submit', (eForm) => {
-        // TODO:
         eForm.preventDefault();
         evalSubmit();
     });
-    console.log("End has run");
 }
 runEventListeners();
 
 function evalName() {
     if (nameChars.test(nameElem.value)) {
-        console.log("Name did not validate");
-        console.log(nameElem.value);
         updateErrorArray();
         nameElem.setCustomValidity("Name did not validate");
     } else {
-        // Validate
-        console.log("Name validated");
-        console.log(nameElem.value)
         nameElem.setCustomValidity("");
+    }
+}
+function evalEmail() {
+    if (emailElem.validity.typeMismatch) {
+        updateErrorArray();
+        emailElem.setCustomValidity("Email is invalid");
+    } else {
+        emailElem.setCustomValidity("");
     }
 }
 
 function evalComments() {
-    let commentsValidity = commentElem.validity;
-    if (commentsValidity.tooLong) {
-        console.log("Comments are too long");
+    if (commentElem.validity.tooLong) {
         updateErrorArray();
         commentElem.setCustomValidity("Comments are too long");
     } 
-    else if (commentsValidity.tooShort) {
-        console.log("Comments are too short");
+    else if (commentElem.validity.tooShort) {
         updateErrorArray();
         commentElem.setCustomValidity("Comments are too short");
     }
     else if (specialChars.test(commentElem.value)) {
-        console.log("Comments cannot use special characters: ");
         updateErrorArray();
         commentElem.setCustomValidity("Comments cannot use special characters");
     } else {
-        console.log("Comments validated: ");
-        console.log(commentElem.value);
         commentElem.setCustomValidity("");
     }
 }
@@ -90,15 +94,15 @@ function evalComments() {
 function evalSubmit() { 
 
     if (nameElem.validity.valid && emailElem.validity.valid && commentElem.validity.valid) {
-        // TODO: Submit the form to the server, empty form_errors
         let inputErrors = document.getElementById("form-errors");
         // let JSONFormErrors = JSON.parse(JSON.stringify(form_errors));
+        for (let i = 0; i < form_errors.length; i++) {
+            JSON.stringify(form_errors[i]);
+        }
         let JSONFormErrors = JSON.stringify(form_errors);
         inputErrors.value = JSONFormErrors;
 
         formElem.appendChild(inputErrors);
-        console.log(JSONFormErrors);
-        console.log(formElem);
         formElem.submit();
         clearArray();
     }
@@ -107,15 +111,24 @@ function evalSubmit() {
 
 // Helper Functions
 function updateErrorArray() {
-    // form_errors.push([nameElem.value, emailElem.value, commentElem.value]);
     let name = nameElem.value;
     let email = emailElem.value;
     let comments = commentElem.value;
     form_errors.push({name, email, comments})
-    console.log(form_errors);
+    // console.log(form_errors);
 }
 function clearArray() {
     while (form_errors.length > 0) {
         form_errors.pop();
+    }
+}
+
+// 
+
+function setTheme(theme) {
+    const root = document.documentElement;
+    console.log(root);
+    if (theme == "dark") {
+        root.style.setProperty('background', 'var(--dark-dark-theme)'); 
     }
 }

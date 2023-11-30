@@ -6,6 +6,9 @@
     --dark-drab: rgb(64, 88, 24);
     --dark-white: rgb(240, 240, 240);
     --req-red: rgb(250, 200, 200);
+
+    --dark-dark-theme: rgb(66, 66, 66);
+    --light-dark-theme: rgb(111, 111, 111);
 }
 
 * {
@@ -126,16 +129,40 @@
 .survey input, textarea {
     margin-left: 2em;
 }
+/* .survey input {
+    animation: fade-in 3s ease;
+}
+.fade-out {
+    animation: fade-out 1s ease 2s forwards; 
+} */
 .req {
     color: red;
 }
 .survey input:required:valid, textarea:required:valid {
     background-color: var(--dark-white);
 }
-.survey input:invalid {
+.survey input:invalid, textarea:invalid{
     background-color: var(--req-red);
+    /* animation: fade-in 1s ease 2ms; */
 }
 
+/* @keyframes fade-in {
+    0% {
+        background-color: var(--dark-white);
+    }
+    100% {
+        background-color: var(--req-red);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        background-color: var(--req-red);
+    }
+    100% {
+        background-color: var(--dark-white);
+    }
+} */
 
 
 /*General tags*/
