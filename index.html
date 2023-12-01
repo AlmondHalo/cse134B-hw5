@@ -126,7 +126,7 @@
         </section>
 
         <section class="survey">
-            <h2>Survey</h2>
+            <h2 id="survey">Survey</h2>
             <form id="contact-form" method="post" action="https://httpbin.org/post">
 
                 <label for="name">Name <span class="req">*</span>:</label>
@@ -149,11 +149,9 @@
                 <input type="hidden" value="true" name="possible_bot"><br/>
 
                 <input type="submit" value="submit">
-
             </form>
-            <button id="theme-switcher" style="visibility: hidden;" name="theme-switcher">Theme Switcher</button>
 
-            <div id="extra-credit">
+            <div id="extra-credit" style="visibility: hidden;">
                 <label for="pick-text-color">Pick Text Color:</label>
                 <input type="color" id="pick-text-color" value="#000000"><br/>
 
@@ -162,6 +160,8 @@
 
                 <label for="pick-gradient">Pick Gradient Color:</label>
                 <input type="color" id="pick-gradient" value="#44aa44"><br/>
+
+                <button id="theme-switcher" style="visibility: hidden;" name="theme-switcher">Switch: Default - Dark</button>
             </div>
 
             <input type="hidden" name="form-errors" id="form-errors">

@@ -20,7 +20,9 @@ const specialChars = /[@#$%^&*_\-+=\[\]{}\\|<>\/~ ]+/;
 const nameChars = /[!@#$%^&*\(\)\{\}\[\]\<\>\/;':"-\=\_\+]+/;
 
 const themeSwitcher = document.getElementById("theme-switcher");
+const colorPicker = document.getElementById("extra-credit");
 themeSwitcher.style.visibility = "visible";
+colorPicker.style.visibility = "visible";
 
 localStorage.setItem("theme", localStorage.getItem("theme") === "dark" ? "light" : "dark");
 themeSwitcher.addEventListener('click', (eButton) => {

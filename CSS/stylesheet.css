@@ -121,14 +121,37 @@
     background-image: linear-gradient(to right, var(--light-drab), var(--dark-white));
 
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 1rem;
 }
-.survey label {
+#survey {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+.survey #contact-form {
+    grid-row: 2 / 2;
+    grid-column: 1 / 2;
+}
+.survey #contact-form > label {
     color: var(--dark-white);
-    grid-row: 2;
     display: block;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+#extra-credit {
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+
+    color: var(--dark-white);
+    display: block;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+#theme-switcher {
+    height: 2em;
+    width: 10em;
     margin-top: 1em;
     margin-left: 2em;
 }
@@ -138,6 +161,7 @@
 .req {
     color: red;
 }
+
 .survey input:required:valid, textarea:required:valid {
     background-color: var(--dark-white);
 }
