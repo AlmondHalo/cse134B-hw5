@@ -131,20 +131,20 @@
 
                 <label for="name">Name <span class="req">*</span>:</label>
                 <input type="text" id="name" name="name" required><br/>
-                <output id="name-error" class="name-error"></output>
-                <output id="name-info" class="name-error"></output>
+                <output id="name-error" class="name-error" name="name"></output>
+                <output id="name-info" class="name-error" name="name"></output>
 
                 <label for="email">Email <span class="req">*</span>:</label>
                 <input type="email" id="email" name="email" required><br/>
-                <output id="email-error" class="email-error"></output>
-                <output id="email-info" class="email-error"></output>
+                <output id="email-error" class="email-error" name="email"></output>
+                <output id="email-info" class="email-error" name="email"></output>
 
                 <label for="comments">Comments <span class="req">*</span>:</label>
                 <textarea id="comments" name="comments" required
                     minlength="3"
                     maxlength="400"></textarea>
-                <output id="comments-error" class="comments-error"></output>
-                <output id="comments-info" class="comments-error"></output>
+                <output id="comments-error" class="comments-error" name="comments"></output>
+                <output id="comments-info" class="comments-error" name="comments"></output>
 
                 <input type="hidden" value="true" name="possible_bot"><br/>
 

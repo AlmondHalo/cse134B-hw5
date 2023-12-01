@@ -152,23 +152,21 @@
     /* animation: fade-in 1s ease 2ms; */
 }
 
-/* @keyframes fade-in {
-    0% {
-        background-color: var(--dark-white);
-    }
-    100% {
-        background-color: var(--req-red);
-    }
+.survey output {
+    animation: fade-out 2s infinite;
+    margin-left: 2em;
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
 }
 
 @keyframes fade-out {
-    0% {
-        background-color: var(--req-red);
+    0% { 
+        opacity: 1;
     }
     100% {
-        background-color: var(--dark-white);
+        opacity: 0;
     }
-} */
+}
 
 
 /*General tags*/
