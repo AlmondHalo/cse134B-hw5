@@ -100,7 +100,7 @@
 }
 #hobbies-title {
     grid-row: 1 / 2;
-    grid-column: 1 / 2;
+    grid-column: 2 / 2;
 }
 .hobbies-item-1 {
     grid-row: 2 / 2;
@@ -126,7 +126,7 @@
     gap: 1rem;
 }
 .survey label {
-    /* change to grid */
+    color: var(--dark-white);
     grid-row: 2;
     display: block;
     margin-top: 1em;
@@ -135,12 +135,6 @@
 .survey input, textarea {
     margin-left: 2em;
 }
-/* .survey input {
-    animation: fade-in 3s ease;
-}
-.fade-out {
-    animation: fade-out 1s ease 2s forwards; 
-} */
 .req {
     color: red;
 }
@@ -152,7 +146,7 @@
     /* animation: fade-in 1s ease 2ms; */
 }
 
-.survey output {
+.error {
     animation: fade-out 2s infinite;
     margin-left: 2em;
     font-family: 'Courier New', Courier, monospace;
@@ -184,7 +178,7 @@ h2 {
     font-weight: bold;
 
     text-align: left;
-    color: var(--dark-drab);
+    color: var(--dark-white);
     margin-left: 2dvw;
 }
 

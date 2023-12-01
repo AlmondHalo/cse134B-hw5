@@ -10,6 +10,10 @@ const emailElem = document.getElementById("email");
 const commentElem = document.getElementById("comments");
 const formElem = document.getElementById("contact-form");
 
+const textColorElem = document.getElementById("pick-text-color");
+const backgroundColorElem = document.getElementById("pick-background");
+const gradientColorElem = document.getElementById("pick-gradient");
+
 let form_errors = [];
 
 const specialChars = /[@#$%^&*_\-+=\[\]{}\\|<>\/~ ]+/;
@@ -54,6 +58,24 @@ function runEventListeners() {
     formElem.addEventListener('submit', (eForm) => {
         eForm.preventDefault();
         evalSubmit();
+    });
+
+    textColorElem.addEventListener('input', (eEC) => {
+        // TODO
+        console.log("Text Coler Elem");
+        chooseTextColor(textColorElem.value);
+    });
+
+    backgroundColorElem.addEventListener('input', (eECBack) => {
+        // TODO
+        console.log("Background Color Elem");
+        chooseBackgroundColor(backgroundColorElem.value);
+    });
+
+    gradientColorElem.addEventListener('input', (eECGradient) => {
+        // TODO
+        console.log("Gradient Color Elem");
+        chooseGradientColor(gradientColorElem.value);
     });
 }
 runEventListeners();
@@ -158,7 +180,6 @@ function flash(elem) {
 
 function setTheme(theme) {
     const root = document.documentElement;
-    console.log("Script gets here");
     if (theme === "light") {
         root.style.setProperty('--dark-drab', 'var(--dark-dark-theme)'); 
         root.style.setProperty('--light-drab', 'var(--light-dark-theme)');
@@ -172,4 +193,18 @@ function setTheme(theme) {
         root.style.setProperty('background', 'white')
         localStorage.setItem("theme", "light");
     }
+}
+
+function chooseTextColor(textColor) {
+    const root = document.documentElement;
+    root.style.setProperty('--dark-white', textColor);
+}
+function chooseBackgroundColor(backgroundColor) {
+    const root = document.documentElement;
+    root.style.setProperty('--light-drab', backgroundColor);
+    root.style.setProperty('background', backgroundColor);
+}
+function chooseGradientColor(gradientColor) {
+    const root = document.documentElement;
+    root.style.setProperty('--dark-drab', gradientColor);
 }
