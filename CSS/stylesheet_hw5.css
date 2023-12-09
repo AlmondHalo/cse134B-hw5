@@ -1,0 +1,14 @@
+:root {
+    --star-color: rgb(100, 100, 100);
+
+    --star-selected-color: rgb(226, 208, 46);
+    --star-unselected-color: rgb(100, 100, 100);
+}
+
+.star {
+    color: var(--star-color);
+}
+
+.star:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Add in stylesheet reference here and make new folder for -->
+        <link rel="stylesheet" href="./CSS/stylesheet_hw5.css"/>
+        <title>Rating Widget</title>
+    </head>
+    <body>
+        <head>
+            <h1>Rating Widget</h1>
+        </head>
+        <section>
+            <rating-widget id="rating-widget">
+                <form id="form" action="https://httpbin.org/post" method="POST">
+                    <label for="rating">How satisfied are you?</label>
+                    <input type="hidden" name="question" value="How satisfied are you?">
+                    <input type="hidden" name="setBy" value="HTML">
+                    <input type="number" id="rating" name="rating" 
+                        min="1" max="5" value="0" required>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="rating-input" hidden>
+                    <span type="button" id="star-1" class="star">&#9733;</span>
+                    <span type="button" id="star-2" class="star">&#9733;</span>
+                    <span type="button" id="star-3" class="star">&#9733;</span>
+                    <span type="button" id="star-4" class="star">&#9733;</span>
+                    <span type="button" id="star-5" class="star">&#9733;</span>
+                </div>
+            </rating-widget>
+    </body>
+
+   <script src="./rating_scripts.js"></script>
+</html>
