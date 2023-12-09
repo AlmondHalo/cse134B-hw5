@@ -33,6 +33,7 @@ function starListeners() {
     }
 }
 
+
 // TODO: Add in send to fetch request to send value.
 function spanClick(val) {
     console.log("Value: " + val); 
