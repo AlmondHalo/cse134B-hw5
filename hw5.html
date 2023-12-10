@@ -22,14 +22,19 @@
                         min="1" max="5" value="0" required>
                     <button type="submit">Submit</button>
                 </form>
-                <div id="rating-input" hidden>
-                    <span type="button" id="star-1" class="star">&#9733;</span>
-                    <span type="button" id="star-2" class="star">&#9733;</span>
-                    <span type="button" id="star-3" class="star">&#9733;</span>
-                    <span type="button" id="star-4" class="star">&#9733;</span>
-                    <span type="button" id="star-5" class="star">&#9733;</span>
-                </div>
-            </rating-widget>
+            </rating-widget><br/>
+            <output id="rating-output"></output>
+        </section>
+        <section>
+            <h2>Current Weather</h2>
+            <weather-widget>
+                <p>Current Weather Conditions Unavailable</p>
+            </weather-widget>
+            <div id="weather-section">
+                <output id="weather-img-output"></output>
+                <output id="weather-output"></output>
+            </div>
+        </section>
     </body>
 
    <script src="./rating_scripts.js"></script>

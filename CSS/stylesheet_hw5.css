@@ -5,10 +5,16 @@
     --star-unselected-color: rgb(100, 100, 100);
 }
 
-.star {
-    color: var(--star-color);
+#weather-section {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
 }
-
-.star:hover {
-    cursor: pointer;
+#weather-section #weather-img-output {
+    text-align: center;
+    padding-top: 1rem;
+    grid-column: 1/2;
+}
+#weather-section #weather-output {
+    padding-top: 2rem;
+    grid-column: 2/2;
 }
