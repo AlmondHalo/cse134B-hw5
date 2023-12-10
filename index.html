@@ -1,174 +1,41 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="utf-8">
 
-        <link rel="stylesheet" href="./CSS/stylesheet.css"/>
-        <title>Title Of Document</title>
+        <!-- Add in stylesheet reference here and make new folder for -->
+        <link rel="stylesheet" href="./CSS/stylesheet_hw5.css"/>
+        <title>Rating Widget</title>
     </head>
     <body>
-        <header class="header">
-            <div class="headelem">
-                <h1 class="doc-name">Cash Rice</h1>
-                <details class="doc-name">
-                    <summary id="drop-down">Contact Information</summary>
-                    <span>cmrice@ucsd.edu</span>
-                    <nav>
-                        <a href="">Clickable Link</a>
-                    </nav>
-                </details>
-                <fieldset class="doc-name" id="box-id">
-                    <legend id="introduction">Introduction</legend>
-                    <p>This is <b>Placeholder</b> text</p>
-                    <p>
-                        Though not ideal for first impressions, it is nice to get 
-                        aquainted with you! I am currently a 
-                        3rd year at University of Califorina, San Diego 
-                        (UCSD for short), a Electrical Computer Engineer major (ECE).
-                        Outside of major related hobbies, I enjoy fantasy reading as 
-                        well as listening to and creating music.
-                    </p>
-                </fieldset>
-            </div>
-
-            <picture class="headelem">
-                <img src="./IMG/temp.jpg" alt="Image of Cash R." id="page-subject-img">
-            </picture>
-        </header>
-
-        <main class="resume">
-            <h2 id="resume-title">Resume</h2>
-            <div class="body-item-1">
-                <h3>Tendon-Driven Catheter</h3>
-                <ul>
-                    <li>Worked on <em>design</em> and <em>data collection</em> of Tendon Driven Catheter robot.</li>
-                    <li>Participated in small team design sessions.</li>
-                </ul>
-                <aside>
-                    <figure>
-                        <img src="IMG/ARCLab.jpg" alt="Image of ARCLab" id="arclab-img">
-                        <figcaption><cite><a href="https://www.ucsdarclab.com/">ARCLab</a></cite></figcaption>
-                    </figure>
-                    <h4>ARCLab Description</h4>
-                    <p>
-                        ARCLab is a research laboratory stationed at UCSD. <br/>
-                        The leading lab professor is Michael Yip.
-                    </p>
-                </aside>
-            </div>
-            
-            <div class="body-item-2">
-                <h3>Softbody Simulation</h3>
-                <ul>
-                    <li>Created 3D rigid body simulation environment within NVIDA's 
-                        Isaac Sim.
-                    </li>
-                    <li>Learned of the indudstry standard algorithm that serves as 
-                        the basis for running 3D softbody simulation.
-                    </li>
-                </ul>
-                <figure>
-                    <img src="./IMG/SxPBD.gif" alt="GIF of Isaac Sim" style="width:48px;height:48px;">
-                    GIF didn't load
-                </figure>
-            </div>
-
-            <section class="body-item-3">
-                <h3>Survey</h3>
-                <form action="./Actions/action.php" method="get" id="survey-content">
-                    <!--This is a quick form to showcase tags and their functions (consider removing)-->
-                    <label for="cname">Company Name:</label>
-                    <input type="text" id="cname" name="cname"><br/>
-                    <label for="cemail">Company Email</label>
-                    <input type="text" id="cemail" name="cemail"><br/>
-                    <input type="submit" value="submit"><br/>
-                    
-                    <label for="info">Request More Information</label>
-                    <select name="info" id="info">
-                        <optgroup label="Personal Info">
-                            <option value="skills">Skills</option>
-                            <option value="values">Work Values</option>
-                        </optgroup>
-                        <optgroup label="Work Experience">
-                            <option value="arclab">ARCLab Experiences</option>
-                            <option value="wics">Programming competition</option>
-                        </optgroup>
-                    </select>
-                    <input type="submit" value="submit"><br/>
-    
-                    <label for="method">Please select prefered contact method</label>
-                    <input list="methods" name="method" id="method">
-                    <datalist id="methods">
-                        <option value="Email">Email</option>
-                        <option value="Phone">Phone</option>
-                        <option value="LinkedIn">LinkedIn</option>
-                        <option value="other">other</option>
-                    </datalist>
-                    <input type="submit" value="submit">
+        <head>
+            <h1>Rating Widget</h1>
+        </head>
+        <section>
+            <rating-widget id="rating-widget">
+                <form id="form" action="https://httpbin.org/post" method="POST">
+                    <label for="rating">How satisfied are you?</label>
+                    <input type="hidden" name="question" value="How satisfied are you?">
+                    <input type="hidden" name="setBy" value="HTML">
+                    <input type="number" id="rating" name="rating" 
+                        min="1" max="5" value="0" required>
+                    <button type="submit">Submit</button>
                 </form>
-            </section>
-        </main>
-
-        <section class="hobbies">
-            <h2 id="hobbies-title">Hobbies</h2>
-            <div class="hobbies-item-1">
-                <video controls id="music-1">
-                    <source src="Audio/Wubz.mp4" type="video/mp4">
-                </video>
-            </div>
-            
-            <div class="hobbies-item-2">
-                <p>
-                    Temporary text Temporary text Temporary text
-                </p>
-            </div>
-
+            </rating-widget><br/>
+            <output id="rating-output"></output>
         </section>
-
-        <section class="survey">
-            <h2 id="survey">Survey</h2>
-            <form id="contact-form" method="post" action="https://httpbin.org/post">
-
-                <label for="name">Name <span class="req">*</span>:</label>
-                <input type="text" id="name" name="name" required><br/>
-                <output id="name-error" class="error" name="name"></output>
-                <output id="name-info" class="name-error" name="name"></output>
-
-                <label for="email">Email <span class="req">*</span>:</label>
-                <input type="email" id="email" name="email" required><br/>
-                <output id="email-error" class="error" name="email"></output>
-                <output id="email-info" class="email-error" name="email"></output>
-
-                <label for="comments">Comments <span class="req">*</span>:</label>
-                <textarea id="comments" name="comments" required
-                    minlength="3"
-                    maxlength="400"></textarea>
-                <output id="comments-error" class="error" name="comments"></output>
-                <output id="comments-info" class="comments-error" name="comments"></output>
-
-                <input type="hidden" value="true" name="possible_bot"><br/>
-
-                <input type="submit" value="submit">
-            </form>
-
-            <div id="extra-credit" style="visibility: hidden;">
-                <label for="pick-text-color">Pick Text Color:</label>
-                <input type="color" id="pick-text-color" value="#000000"><br/>
-
-                <label for="pick-background">Pick Background Color:</label>
-                <input type="color" id="pick-background" value="#44aa44"><br/>
-
-                <label for="pick-gradient">Pick Gradient Color:</label>
-                <input type="color" id="pick-gradient" value="#44aa44"><br/>
-
-                <button id="theme-switcher" style="visibility: hidden;" name="theme-switcher">Switch: Default - Dark</button>
+        <section>
+            <h2>Current Weather</h2>
+            <weather-widget>
+                <p>Current Weather Conditions Unavailable</p>
+            </weather-widget>
+            <div id="weather-section">
+                <output id="weather-img-output"></output>
+                <output id="weather-output"></output>
             </div>
-
-            <input type="hidden" name="form-errors" id="form-errors">
-            <script src="./scripts.js"></script>
         </section>
-
-        <footer>
-        </footer>
     </body>
+
+   <script src="./rating_scripts.js"></script>
 </html>
